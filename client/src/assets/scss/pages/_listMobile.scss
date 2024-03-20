@@ -1,0 +1,119 @@
+.list-page-mobile {
+  .container-fluid {
+    .row {
+      .tittle {
+        p {
+        }
+        h3 {
+          font-size: $text-2xl;
+        }
+      }
+      @for $i from 0 to 4 {
+        .item-#{$i + 1} {
+          animation: FadeInTop (1s * $i + 1);
+        }
+      }
+      .list-choose {
+        @include responsive("xs") {
+          width: 100%;
+        }
+        @include responsive("mdd") {
+          width: 50%;
+        }
+        margin-bottom: 30px;
+        .thumbnail {
+          min-height: 190px;
+          img {
+            object-fit: cover;
+            @include responsive("xs") {
+              height: 100%;
+            }
+          }
+        }
+        .detail {
+          .info {
+            @include responsive("xs") {
+              font-size: $text-xs;
+              text-align: justify;
+            }
+            @include responsive("mdd") {
+              font-size: $text-base;
+            }
+            h5 {
+              @include responsive("xs") {
+                font-size: $text-base;
+                text-align: justify;
+              }
+              @include responsive("mdd") {
+                font-size: $text-xl;
+              }
+            }
+            p {
+              @include responsive("xs") {
+                font-size: $text-xs;
+              }
+              @include responsive("mdd") {
+                font-size: $text-base;
+              }
+            }
+          }
+          .view-more {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .button {
+              a {
+                font-size: $text-xl;
+                color: $text-c1-light;
+                text-align: center;
+                position: relative;
+                transition: all 0.7s;
+                text-decoration: none;
+                &::after {
+                  position: absolute;
+                  content: ">>";
+                  transition: all 0.5s;
+                  opacity: 0;
+                  top: 1px;
+                  right: -50px;
+                }
+                &:hover {
+                  padding-right: 40px;
+                  padding-left: 10px;
+                  &::after {
+                    opacity: 1;
+                    right: 10px;
+                  }
+                }
+                span {
+                  position: relative;
+                  z-index: 2;
+                }
+              }
+            }
+            .price {
+              a {
+                background: $bg-header-main;
+                color: $text-c1-light;
+                font-size: $text-xl;
+                @include responsive("xs") {
+                  font-size: $text-xs;
+                }
+                @include responsive("mdd") {
+                  font-size: $text-base;
+                }
+                &:hover {
+                  opacity: 0.8;
+                  transition: all 0.5s;
+                }
+              }
+            }
+          }
+        }
+      }
+      .map {
+        animation: FadeInTop 2s;
+      }
+    }
+  }
+}

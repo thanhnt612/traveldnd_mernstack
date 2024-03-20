@@ -1,0 +1,29 @@
+/*-----------------Themes---------------------*/
+@import "./themes/base";
+@import "./themes/mixin";
+@import "./themes/variable";
+@import "./themes/darkMode";
+
+/*------------------Component--------------------*/
+@import "./components/HeaderHome";
+@import "./components/FooterHome";
+
+/*-----------------Templates---------------------*/
+@import "./templates/HomeTemplate";
+@import "./templates/UserTemplate";
+
+/*------------------Pages--------------------*/
+@import "./pages/detail";
+@import "./pages/detailMobile";
+@import "./pages/home";
+@import "./pages/homeMobile";
+@import "./pages/login";
+@import "./pages/profile";
+@import "./pages/register";
+@import "./pages/list";
+@import "./pages/listMobile";
+@import "./pages/detailBlog";
+@import "./pages/about";
+@import "./pages/edit";
+
+

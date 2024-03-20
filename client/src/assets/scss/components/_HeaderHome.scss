@@ -1,0 +1,137 @@
+.header-layout {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  opacity: 1;
+  .header-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header-home {
+      z-index: 10;
+      a {
+        display: inline-block;
+        cursor: pointer;
+      }
+    }
+    .header-search {
+      display: flex;
+      justify-content: center;
+      @include responsive("xs") {
+        padding: 15px;
+      }
+      @include responsive("md") {
+        padding: 15px;
+      }
+      form {
+        z-index: 2;
+        position: relative;
+        .form-fill {
+          background: $bg-header-light;
+          @include responsive("md") {
+            font-size: $text-base;
+          }
+          @include responsive("xl") {
+            font-size: $text-xl;
+          }
+          h4 {
+            font-size: $text-xl;
+            @include responsive("lg") {
+              font-size: $text-base;
+            }
+          }
+          .location {
+            .destination {
+              input {
+                width: 100%;
+                border: none;
+                outline: none;
+              }
+            }
+          }
+        }
+        .result-location {
+          position: absolute;
+          top: 60px;
+          right: 185px;
+          width: 60%;
+          overflow: hidden;
+          overflow-y: scroll;
+          @include responsive("xs") {
+            width: 80%;
+            top: 40px;
+            right: 70px;
+          }
+          @include responsive("mdd") {
+            width: 100%;
+            top: 40px;
+            left: 0;
+          }
+          @include responsive("lg") {
+            width: 80%;
+          }
+          @include responsive("xl") {
+            width: 70%;
+          }
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          button {
+            text-align: left;
+            border: none;
+            width: 100%;
+            background-color: white;
+            &:hover {
+              background-color: $bg-header-main;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .header-info {
+      z-index: 10;
+      .center-info {
+        margin: 0 10px;
+      }
+      .right-info {
+        margin: 0 10px;
+        padding: 8px;
+        display: flex;
+        border: 2px solid $bg-grey;
+        border-radius: 10px;
+        color: white;
+        &:hover {
+          background-color: $bg-header-main;
+          color: white;
+        }
+        .nav-item {
+          list-style: none;
+          position: relative;
+          a {
+            .bar {
+              padding-right: 10px;
+            }
+          }
+          .list-info {
+            li {
+              a {
+                background: $bg-header-light;
+                color: $text-c1-dark;
+                &:hover {
+                  background: $bg-header-main;
+                  color: $text-c1-light;
+                  transition: 0.3s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .search-bar {
+      @extend .header-search;
+    }
+  }
+}

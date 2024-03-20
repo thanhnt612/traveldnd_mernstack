@@ -1,0 +1,10 @@
+.user-template {
+  width: 100%;
+  font-size: $text-base;
+  .background-user {
+    background: url(../../img/signup/bg-signup.jpg) center center / cover
+      no-repeat;
+    object-fit: cover;
+    height: 963px;
+  }
+}
